@@ -1,0 +1,12 @@
+大数据生态圈	
+	Hadoop  -> Java语言
+	Spark   -> Scala语言
+
+	Scala和Java可以互通
+	Scala是Spark生态圈的基石  
+
+	Spark、Apache Flink、Apache kafka等都是Scale开发的
+
+	环境参数
+		JDK1.8 			Scala：2.11.8
+		开发工具：IDEA	SpringBoot
