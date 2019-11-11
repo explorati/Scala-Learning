@@ -15,5 +15,24 @@ Scala安装
 	1）安装 Java 8
 	2) 下载 download scala  网址：https://www.scala-lang.org/download/2.11.8.html
 	3) 解压 unzip scala
-	4) 配置环境变量(可选) Linux或Mac [option] ~/.bash_profile
-	5) 查看是否生效 ./scala
+	4) 配置环境变量(可选) 
+		Windows 需配置两个 Path中： D:\scala\bin 和 D:\scala\jre\bin
+		Linux或Mac [option] ~/.bash_profile
+	5) 查看是否生效 
+		Windows  scala
+		Linux或Mac ./scala
+
+	Linux或Mac中操作步骤：
+		1.tar -zxvf scala-2.11.8.tgz -C  解压路径
+		2.到解压目录下 pwd  复制整个路径 
+		3.将上面的路径 添加到环境变量中
+			vi ~/.bash_profile
+				export SCALA_HOME=复制的路径
+				export PATH=$SCALA_HOME/bin:$Path
+			保存
+			source ~/.bash_profile
+			echo $SCALA_HOME
+
+	下载之后的scala目录下的bin目录中 有普通文件 和 .bat文件
+	 .bat文件是在Windows中用的，Linux或Mac中用不到，所以可以删掉 rm *.bat
+
