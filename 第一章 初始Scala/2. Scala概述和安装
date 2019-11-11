@@ -1,0 +1,19 @@
+Scala概述
+	Scala是一门多范式的编程语言，设计初衷是要集成面向对象编程和函数式编程的各种特性
+		多范式编程语言：是一种支持超过一种编程范型的程式语言，这个词提出最初是用于表述C++可以同时使用多种风格来写程序，比如面向对象和泛型编程。
+	官网原文：
+		Scala combines object-oriented and functional programming in one concise, high-level language.
+	Scala运行于Java平台(Java虚拟机)，并兼容现有的Java程序
+
+学习Scala的意义：
+	Spark、Kafka、Flink  
+	优雅
+	开发速度快
+	融合到生态圈
+
+Scala安装
+	1）安装 Java 8
+	2) 下载 download scala  网址：https://www.scala-lang.org/download/2.11.8.html
+	3) 解压 unzip scala
+	4) 配置环境变量(可选) Linux或Mac [option] ~/.bash_profile
+	5) 查看是否生效 ./scala
