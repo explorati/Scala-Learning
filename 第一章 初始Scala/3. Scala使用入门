@@ -1,0 +1,21 @@
+Scala使用入门
+	控制台中 
+		1. scala   
+		2. 1 + 3
+		3. res0 * 3
+		4. res0 * res1
+		5. println("Hello World")
+
+Scala vs Java  HelloWorld
+Java
+	public class HelloWorld {
+		public static void main(String[] args) {
+			System.out.println("Hello World..");
+		}
+	}
+Scala(每行代码并不强求使用;结束，但是Java是必须的)
+	Object HelloWorld {
+		def main(args : Array[String]) {
+			println("Hello World..")
+		}
+	}
