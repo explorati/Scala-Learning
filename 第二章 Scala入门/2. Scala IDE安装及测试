@@ -1,0 +1,13 @@
+Scala IDE
+	IDEA：需要自己安装Scala插件  		推荐
+	Eclipse： Scala IDE for Eclipse 自带Scala
+	NetBeans
+
+使用IDEA整合Maven构建Scala应用程序
+	1.下载IDEA和Maven
+	2.进入IDEA，新建项目 选择Maven 勾选create from archetype 选择scala-archetype simple-> 正常创建(注意Maven仓库位置)
+	3.IDEA默认是不支持Scala的，需要下载Scala插件
+		File -> settings -> Plugins -> install JetBrains plugin -> scala
+		之后就可以new 一个Scala类了
+	4.新建测试类，运行报错
+		删除pom.xml中<arg>make:transitive</args>
