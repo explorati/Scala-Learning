@@ -1,0 +1,29 @@
+val vs var
+	val：值
+		final
+		val 值名称：类型=xx
+		val a = 1  (不可变)
+		val a : int = 1
+	var：变量
+		var 值名称：类型=xxx
+		var b = 1
+		var b : int = 1
+Scala基本数据类型
+	Byte/Char
+	Short/Int/Long/Float/Double
+	Boolean
+
+	只有Float声明时比较特别
+		var c : Float = 1.1f
+
+lazy的使用
+	lazy var d : int = 1;
+	延迟加载，只有在第一次使用时才加载
+
+	读取文件并以字符串形式输出
+		import scala.io.Source._
+		var info = fromFile("...").mkString
+	如果用lazy var info = fromFile("...").mkString，开始是检测不到错误的，要小心使用
+*注意：当一个变量声明为lazy，只有当你第一次操作时才会去真正访问，如果不去访问，即使写错了，也不会发现
+
+
