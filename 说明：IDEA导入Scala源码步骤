@@ -1,0 +1,7 @@
+IDEA导入Scala源码步骤
+	1.下载Spark源码 网址：http://spark.apache.org/downloads.html
+		其中 choose a Spark Release: 选择版本，随意
+			 choose a package type: 选择Source Code(源码)
+	2.下载之后解压到指定目录
+	3.打开IDEA，File->Project Structure -> Modules -> Dependencies -> 点击右侧的'+'，选择Library... ,选择Java -> 找到刚才解压源码的位置
+	ok
