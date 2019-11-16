@@ -1,0 +1,105 @@
+Scala函数
+函数/方法的定义和使用
+	def 方法名(参数: 参数类型): 返回值类型 = {
+		//方法体
+
+		//返回值(不需要使用return)
+	}
+	def max(x: Int, y: Int): Int = {
+		if(x > y)
+			x
+		else 
+			y
+	}
+	def:开始函数定义
+	max:函数名
+	()：参数列表
+	最后一个Int：函数返回值类型
+
+	例：
+	def main(args: Array[String]): Unit = {
+		println(add(2,3))
+		println(three())
+		println(three)  //没有入参的函数，调用时括号可以省略
+
+		sayHello
+		sayHello("zhangsan")
+	}
+
+	def add(x: Int, y: Int): Int = {
+		x + y //最后一行就是返回值，不需要return
+	}
+
+	def three() = 1 + 2
+
+	def sayHello: Unit ={
+		println("Say Hello...")
+	}
+
+	def sayHello(name : String): Unit ={
+		println("Say Hello..." + name)
+	}
+
+默认参数： 在函数定义时，允许指定参数的默认值
+  def sayName(name: String = "PK") = {
+    println(name)
+  }
+  
+  sayName()
+  sayName("rouze")
+  相关源码：SparkContext中使用
+
+  命名参数
+  	def speed(destination: Float, time: Float): Float {
+  		destination / time
+  	}
+
+  	println(speed(100, 10))
+  	println(speed(time = 10, destination = 100))
+
+可变参数(可传入任意多个相同类型的参数)  java中 int... numbers
+	JDK5+：可变参数
+	def sum(number: Int*) {
+		var result = 0
+		for(num <- number) {
+			result += num
+		}
+		result
+	}
+	相关源码：org.apache.spark.sql.Dataset中的select方法
+
+条件表达式
+	if else
+	val a = if(x > 0) true else false
+
+循环表达式
+	to   	1 to 10 (左闭右闭)  1.to(10)
+	range	Range(1,10) (左闭右开的) Range(1,10,2) (2为步长)
+	until	1 until 10 (左闭右开)
+	to、until的底层调用都是Range
+
+	for(i <- 1.to(10)) {
+		println(i)
+	}
+	for(i <- 1.until(10, 2)) {
+		println(i)
+	}
+	for(i <- 1 to 10 if i % 2 == 0) {
+		println(i)
+	}
+
+	val courses = Array("Hadoop", "Spark SQL", "Spark Streaming", "Storm", "Scala")
+	for(course <- courses) {
+		println(course)
+	}
+
+	//course 其实就是courses里面的每个元素
+	// => 	 就是将左边的course作用上一个函数，变成另外一个结果
+	courses.foreach(course => println(course))
+
+	var (num, sum) = (100, 0)
+	while(num > 0){
+		sum = sum + num
+		num = num - 1
+	}
+	println(sum)
