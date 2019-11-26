@@ -1,0 +1,60 @@
+Java/Scala OO(Object Oriented)
+	封装：属性、方法封装到类中，可设置访问级别
+	继承：父类和子类之间的关系  重写 
+	多态：父类引用指向子类对象  开发框架基石
+
+类的定义和使用
+	class SparkContext(config: SparkConf) extends Logging{}
+
+	构造器(主构造器和附属构造器)
+	def this() = this(new SparkConf())
+
+	//主构造器
+	class Person(val name: String, val age: Int){
+		  println("Person constructor enter...")
+
+		  val school = "ustc"
+		  var gender: String = _
+
+		  //附属构造器
+		  def this(name: String , age: Int, gender: String){
+		    this(name, age)   //必须要调用主构造器或者其他附属构造器
+		    this.gender = gender
+	 }
+
+继承
+		class Student(name: String, age: Int, var major: String) extends Person(name, age) {
+
+重写
+	override def acquireUnrollMemory()
+	override def toString = "test override"
+
+抽象类
+	abstract class Person2{}
+	private [spark] abstract class MemoryManager(...) entends Logging{}
+
+伴生类和伴生对象
+  	如果有一个class，还有一个与class同名的object 互为 伴生类和伴生对象
+	class ApplyTest{
+		def apply(){
+			println(...)
+		}
+	} 
+	object ApplyTest{
+		def apply(){
+			println("Object ApplyTest apply...")
+			new ApplyTest
+		}
+	} 
+	
+  	类名() ==> Object.apply
+  	对象() ==> Class.apply  
+  	最佳实践：在Object的apply方法中去new一个Class
+
+  	case class ：不用new
+  		case class Dog(name: String)
+
+  	Trait： 类似implements  
+  			xxx entends ATrait 
+  			xxx extends Cloneable with Logging with Serializable
+  		源码中Partition类
